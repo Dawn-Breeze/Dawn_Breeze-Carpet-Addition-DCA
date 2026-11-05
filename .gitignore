@@ -1,0 +1,13 @@
+# Gradle
+.gradle/
+build/
+run/
+*.log
+
+# Local build dependencies (Carpet is not redistributed with this repository)
+libs/
+
+# IDE
+.idea/
+*.iml
+.vscode/

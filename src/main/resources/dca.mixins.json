@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "package": "dca.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "BlockBehaviourMixin",
+    "ChorusFlowerBlockInvoker",
+    "ChorusFlowerBlockMixin",
+    "ChorusPlantBlockMixin",
+    "EndPortalArrivalMixin",
+    "EndPortalDestinationMixin",
+    "MerchantMenuButtonMixin",
+    "MerchantMenuInvoker",
+    "RedStoneOreBlockMixin"
+  ],
+  "client": [
+    "AbstractContainerScreenTickMixin",
+    "MerchantScreenAccessor",
+    "MinecraftClientTickMixin",
+    "TradeRowClickMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

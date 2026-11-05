@@ -1,0 +1,22 @@
+{
+  "dca.rule.redstoneOreNoteBlockBlink.name": "Redstone Ore Random Flip",
+  "dca.rule.redstoneOreNoteBlockBlink.desc": "Redstone ore with a note block directly above it randomly toggles its lit state, at intervals of n~5n ticks, where n is the note block's note value.",
+
+  "dca.rule.villagerBulkTrade.name": "Bulk Trade Blast",
+  "dca.rule.villagerBulkTrade.desc": "Holding Ctrl+Alt+C in the trade screen repeats the selected trade with every inventory item that can pay for it, dropping the products.",
+
+  "dca.rule.chorusFlowerBonemeal.name": "Chorus Flower Ripening",
+  "dca.rule.chorusFlowerBonemeal.desc": "Bone meal gives one connected chorus flower a single natural growth tick.",
+
+  "dca.rule.pauseSoundOnFocusLost.name": "Silence On Window Unfocus",
+  "dca.rule.pauseSoundOnFocusLost.desc": "Silences the selected sound categories while the game window is unfocused.",
+
+  "dca.rule.endPlatformShapeUpdateOnEntry.name": "End Platform PP Update",
+  "dca.rule.endPlatformShapeUpdateOnEntry.desc": "Makes the End arrival platform emit a shape update (post-placement update) in all six directions on every arrival.",
+
+  "dca.rule.endPortalDestinationInEnd.name": "End Portal Inside The End Enters The End",
+  "dca.rule.endPortalDestinationInEnd.desc": "An end portal inside the End sends entities to the End, as if arriving from the Overworld. Beware: you can get stuck in the End!",
+
+  "dca.category.dca": "DCA",
+  "dca.category.feature": "Feature"
+}

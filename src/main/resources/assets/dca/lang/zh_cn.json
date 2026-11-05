@@ -1,0 +1,22 @@
+{
+  "dca.rule.redstoneOreNoteBlockBlink.name": "红石矿石随机翻转",
+  "dca.rule.redstoneOreNoteBlockBlink.desc": "正上方有音符盒的红石矿石会随机切换亮灭，间隔为 n~5n 刻，n 为音符盒的音符值。",
+
+  "dca.rule.villagerBulkTrade.name": "喷射交易",
+  "dca.rule.villagerBulkTrade.desc": "在交易界面按住 Ctrl+Alt+C，用背包内全部可支付物品对选中交易反复成交，产物直接掉落。",
+
+  "dca.rule.chorusFlowerBonemeal.name": "可催熟紫颂花",
+  "dca.rule.chorusFlowerBonemeal.desc": "骨粉可使相连结构中的一朵紫颂花获得一次自然生长。",
+
+  "dca.rule.pauseSoundOnFocusLost.name": "游戏窗口失去焦点时静音",
+  "dca.rule.pauseSoundOnFocusLost.desc": "游戏窗口失去焦点时，静音指定的声音类别。",
+
+  "dca.rule.endPlatformShapeUpdateOnEntry.name": "末地平台发出 PP 更新",
+  "dca.rule.endPlatformShapeUpdateOnEntry.desc": "每次抵达末地时，让抵达平台向六个方向发出一次形状更新。",
+
+  "dca.rule.endPortalDestinationInEnd.name": "末地内的末地传送门进入末地",
+  "dca.rule.endPortalDestinationInEnd.desc": "末地内的末地传送门会把实体送往末地，效果等同于从主世界进入。小心被困在末地！",
+
+  "dca.category.dca": "DCA",
+  "dca.category.feature": "特性"
+}

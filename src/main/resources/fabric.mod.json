@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "dca",
+  "version": "${version}",
+
+  "name": "DCA",
+  "description": "A small Carpet extension: six opt-in rules for redstone, trading, chorus flowers, focus-loss audio, and the End.",
+  "authors": [
+    "Dawn-Breeze"
+  ],
+  "license": "MIT",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dca.DcaExtension"
+    ]
+  },
+  "mixins": [
+    "dca.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "carpet": ">=26.2",
+    "minecraft": ">=26.2",
+    "java": ">=25"
+  },
+
+  "custom": {
+    "modmenu": {
+      "parent": "carpet"
+    }
+  }
+}

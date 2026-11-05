@@ -1,0 +1,74 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+base {
+    archivesName = project.archives_base_name
+}
+
+version = project.mod_version
+group = project.maven_group
+
+repositories {
+    maven {
+        name = 'Fabric'
+        url = 'https://maven.fabricmc.net/'
+    }
+}
+
+def carpetJar = file("libs/fabric-carpet-${project.carpet_version}.jar")
+
+dependencies {
+    // Minecraft 26.2 is not obfuscated, so no mappings are declared.
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+
+    // Carpet is required to compile (carpet.CarpetExtension, carpet.api.settings.*) but is not
+    // bundled into the jar: users install Carpet themselves. DCA also does not use Fabric API.
+    compileOnly files(carpetJar)
+}
+
+// Put the Carpet jar in libs/ yourself, or let Gradle fetch it once (see carpet_url in
+// gradle.properties). The jar is not committed because Carpet is licensed separately.
+tasks.register('fetchCarpetJar') {
+    outputs.file(carpetJar)
+    doLast {
+        if (carpetJar.exists()) {
+            return
+        }
+        carpetJar.parentFile.mkdirs()
+        logger.lifecycle("Downloading Carpet ${project.carpet_version} -> ${carpetJar}")
+        def url = new URI(project.carpet_url).toURL()
+        url.openStream().withCloseable { input ->
+            carpetJar.withOutputStream { output -> input.transferTo(output) }
+        }
+    }
+}
+tasks.named('compileJava') {
+    dependsOn 'fetchCarpetJar'
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') {
+        expand 'version': project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    // Minecraft 26.2 requires Java 25.
+    options.release = 25
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+jar {
+    from('LICENSE') {
+        rename { "${it}_${project.archives_base_name}" }
+    }
+}
